@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab1 Form 연습</title>
+</head>
+<body>
+  <h2>회원 정보 입력 (Lab1)</h2>
+  <form>
+    이름: <input type="text" name="username" required><br><br>
+
+    이메일: <input type="email" name="email" required><br><br>
+
+    비밀번호: <input type="password" name="pw" required><br><br>
+
+    생일: <input type="date" name="birth"><br><br>
+
+    성별:
+    <label><input type="radio" name="gender" value="M">남</label>
+    <label><input type="radio" name="gender" value="F">여</label><br><br>
+
+    취미:
+    <label><input type="checkbox" name="hobby" value="reading">독서</label>
+    <label><input type="checkbox" name="hobby" value="music">음악</label>
+    <label><input type="checkbox" name="hobby" value="sports">운동</label><br><br>
+
+    국적:
+    <select name="country">
+      <option value="korea">대한민국</option>
+      <option value="usa">미국</option>
+      <option value="japan">일본</option>
+    </select><br><br>
+
+    좋아하는 색상: <input type="color" name="favcolor"><br><br>
+
+    하루 공부 시간(0~10): <input type="range" name="study" min="0" max="10"><br><br>
+
+    자기소개:<br>
+    <textarea name="intro" rows="4" cols="40"></textarea><br><br>
+
+    <input type="submit" value="제출">
+    <input type="reset" value="초기화">
+  </form>
+</body>
+</html>

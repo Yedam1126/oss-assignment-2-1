@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Lab4 – Dynamic Page</title>
+<style>
+  body { font-family: Arial; margin:40px; }
+  #itemInput { width:220px; padding:5px; }
+  button { padding:5px 10px; margin-left:4px; cursor:pointer; }
+  ul { margin-top:20px; }
+</style>
+</head>
+<body>
+<h2>동적 목록 추가/삭제</h2>
+
+<input type="text" id="itemInput" placeholder="예: apple, banana">
+<button id="addBtn">추가</button>
+<button id="delBtn">전체삭제</button>
+
+<ul id="itemList"></ul>
+
+<script>
+document.getElementById('addBtn').onclick = function(){
+  const txt = document.getElementById('itemInput').value.trim();
+  if(!txt) { alert("내용을 입력하세요!"); return; }
+  const items = txt.split(',');
+  const list = document.getElementById('itemList');
+  items.forEach(function(it){
+    const li = document.createElement('li');
+    li.textContent = it.trim();
+    if(li.textContent) list.appendChild(li);
+  });
+  document.getElementById('itemInput').value = "";
+};
+
+document.getElementById('delBtn').onclick = function(){
+  if(confirm("목록을 모두 삭제할까요?")){
+    document.getElementById('itemList').innerHTML = "";
+  }
+};
+</script>
+</body>
+</html>
